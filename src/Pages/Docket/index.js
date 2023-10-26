@@ -92,7 +92,9 @@ const Docket = () => {
         </Select>
       </FormControl>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Purchase Order</InputLabel>
+        <InputLabel id="demo-simple-select-label">
+          Create Order Docket
+        </InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="purchaseOrder"
@@ -106,7 +108,7 @@ const Docket = () => {
         </Select>
       </FormControl>
       <Button onClick={onSubmit} variant="contained">
-        Submit
+        Create
       </Button>
       <Modal
         inputItems={inputItems}
