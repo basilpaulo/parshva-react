@@ -30,7 +30,7 @@ export default function Modal({ open, setOpen, formData }) {
       onClose={handleClose}
       aria-describedby="alert-dialog-slide-description"
     >
-      <DialogTitle>{"Purchase Docket"}</DialogTitle>
+      <DialogTitle>{"Order Docket"}</DialogTitle>
       <DialogContent className="modal__content">
         <DialogContentText id="alert-dialog-slide-description">
           <List component="nav" aria-label="mailbox folders">
