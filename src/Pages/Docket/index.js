@@ -64,7 +64,7 @@ const Docket = () => {
   return (
     <div className="docket_main">
       <Typography variant="h4" component="h2">
-        Submit Your Order
+        Create Order Docket
       </Typography>
       {inputItems.map((item) => (
         <TextField
@@ -92,9 +92,7 @@ const Docket = () => {
         </Select>
       </FormControl>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">
-          Create Order Docket
-        </InputLabel>
+        <InputLabel id="demo-simple-select-label">Purchase Order</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="purchaseOrder"
