@@ -1,5 +1,7 @@
 import {
+  Backdrop,
   Button,
+  CircularProgress,
   FormControl,
   InputLabel,
   MenuItem,
@@ -24,15 +26,20 @@ const Docket = () => {
   const [supppliers, setSuppliers] = useState([]);
   const [purchaseOrder, sePurchaseOrder] = useState([]);
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    const supps = await (await fetch("http://localhost:9000/suppliers")).json();
+    setLoading(true);
+    const supps = await (
+      await fetch("https://parshva-api.onrender.com/suppliers")
+    ).json();
     const suppliers = Object.keys(supps);
     suppliers.shift();
     setSuppliers(suppliers);
     setSuppliersData(supps);
+    setLoading(false);
   };
   const inputItems = [
     { label: "Name", id: "name" },
@@ -107,6 +114,14 @@ const Docket = () => {
         open={open}
         setOpen={setOpen}
       />
+      <>
+        <Backdrop
+          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={loading}
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
+      </>
     </div>
   );
 };
